@@ -13,4 +13,5 @@
   scroll-padding-top: 2rem;
   text-decoration: none;
   list-style-type: none;
+  overflow-x: hidden;
 }
