@@ -1,6 +1,6 @@
 # Teste para Front-End (ReactJS) da Melhor Comunicação
 
-Este repositório é dedicado ao teste técnico para a **Melhor Comunicação**. O desenvolvimento deste teste foi realizado em aproximadamente **6 horas e meia**. O objetivo principal foi demonstrar as habilidades com ReactJS, integração com APIs e o desenvolvimento de uma interface responsiva e intuitiva.
+Este repositório é dedicado ao teste técnico para a **Melhor Comunicação**. O desenvolvimento deste teste foi realizado em aproximadamente **6 horas e meia em um dia**. O objetivo principal foi demonstrar as habilidades com ReactJS, integração com APIs e o desenvolvimento de uma interface responsiva e intuitiva.
 
 ## Como Rodar o Projeto
 
