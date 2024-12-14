@@ -58,7 +58,11 @@ const DataTable = ({ phones, setPhones }: DataTableProps) => {
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-5">
           <h4 className="font-bold text-2xl text-black">Produtos</h4>
           <Button
+            className="!bg-secondary !text-black !border-black !border-solid !border !shadow-none"
             variant="contained"
+            onClick={() => {
+              window.location.href = "/phone/create";
+            }}
             startIcon={
               <div className="flex justify-start items-center">
                 <FaPlus />
@@ -93,17 +97,28 @@ const DataTable = ({ phones, setPhones }: DataTableProps) => {
                       {row.code}
                     </TableCell>
                     <TableCell align="right">{row.model}</TableCell>
-                    <TableCell align="right">{row.price}</TableCell>
+                    <TableCell align="right">
+                      {new Intl.NumberFormat("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      }).format(Number(row.price))}
+                    </TableCell>
                     <TableCell align="right">{row.brand}</TableCell>
                     <TableCell align="right">{row.color}</TableCell>
                     <TableCell
                       align="right"
                       className="flex justify-center items-center"
                     >
-                      <IconButton onClick={() => handleDelete(row.code)}>
+                      <IconButton
+                        onClick={() => row.code && handleDelete(row.code)}
+                      >
                         <MdDelete />
                       </IconButton>
-                      <IconButton>
+                      <IconButton
+                        onClick={() =>
+                          (window.location.href = `/phone/${row.code}`)
+                        }
+                      >
                         <HiPencil />
                       </IconButton>
                     </TableCell>
