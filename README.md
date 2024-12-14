@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+# Teste para Front-End (ReactJS) da Melhor Comunicação
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório é dedicado ao teste técnico para a **Melhor Comunicação**. O desenvolvimento deste teste foi realizado em aproximadamente **6 horas e meia**. O objetivo principal foi demonstrar as habilidades com ReactJS, integração com APIs e o desenvolvimento de uma interface responsiva e intuitiva.
 
-Currently, two official plugins are available:
+## Como Rodar o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para rodar este projeto em seu ambiente local, siga os seguintes passos:
 
-## Expanding the ESLint configuration
+### 1. Criação do Arquivo `.env`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para configurar as variáveis de ambiente necessárias, crie um arquivo `.env` na raiz do projeto. Você pode utilizar o arquivo `.env.example` como modelo. Copie as variáveis de ambiente para o seu arquivo `.env` e preencha com os valores apropriados.
 
-- Configure the top-level `parserOptions` property like this:
+> **Importante**: A API da Melhor Comunicação não estava funcionando durante o desenvolvimento, então, para contornar esse problema, foi criado um **ambiente de teste**.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 2. Configuração do Ambiente de Teste
+
+Para usar os dados mockados no ambiente de teste, defina a variável `VITE_NOTE_ENV` no arquivo `.env` como `test`. Isso fará com que o sistema utilize dados simulados armazenados no **LocalStorage**, proporcionando uma melhor experiência de UI/UX.
+
+### 3. Instalação das Dependências
+
+Com o arquivo `.env` configurado, instale as dependências do projeto utilizando o comando:
+
+```bash
+npm install
+```
+Este comando deve ser executado apenas uma vez para instalar todas as dependências necessárias.
+
+### 4. Inicializando o Projeto
+Após a instalação das dependências, inicie o projeto com o seguinte comando:
+
+```bash
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Isso iniciará o servidor de desenvolvimento, e você poderá acessar o projeto em http://localhost:5173/.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 5. Integração com a API
+Mesmo que a API da Melhor Comunicação não esteja funcionando corretamente, a integração com a API foi implementada e está disponível no diretório services. Isso permite que a estrutura do projeto já esteja pronta para consumir a API assim que ela estiver funcional.
